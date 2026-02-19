@@ -13,7 +13,6 @@ vr-mode-ui="enabled:false"
 device-orientation-permission-ui="enabled:false">
 
 <a-assets>
-<img id="card" src="./image.jpg">
 <a-asset-item id="avatarModel" src="./model.glb"></a-asset-item>
 </a-assets>
 
@@ -21,13 +20,9 @@ device-orientation-permission-ui="enabled:false">
 
 <a-entity mindar-image-target="targetIndex: 0">
 
-<!-- Ảnh 2D -->
-<a-plane src="#card" height="0.6" width="1"></a-plane>
-
-<!-- Model -->
 <a-gltf-model
 src="#avatarModel"
-position="0 0 0.1"
+position="0 0 0"
 scale="0.5 0.5 0.5">
 </a-gltf-model>
 
