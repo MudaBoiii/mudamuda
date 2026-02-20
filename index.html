@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindAR - Aris 60/40 Stability</title>
+    <title>MindAR - Final Animation & Scale</title>
     
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -13,7 +13,7 @@
     <a-scene 
       mindar-image="imageTargetSrc: targets.mind; filterMinCF: 0.0005; filterBeta: 0.005; warmupTolerance: 7; missTolerance: 7;" 
       color-space="sRGB" 
-      renderer="antialias: true; colorManagement: true; physicallyCorrectLights: false; precision: highp;" 
+      renderer="colorManagement: true, physicallyCorrectLights: true" 
       vr-mode-ui="enabled: false" 
       device-orientation-permission-ui="enabled: false">
 
@@ -30,12 +30,12 @@
           position="0 0 0" 
           rotation="90 0 0" 
           scale="1 1 1"
-          animation-mixer="clip: *; loop: repeat; timeScale: 1">
+          animation-mixer="clip: *; loop: repeat">
         </a-gltf-model>
 
       </a-entity>
 
-      <a-light type="ambient" intensity="1.5"></a-light>
+      <a-light type="ambient" intensity="1.2"></a-light>
       <a-light type="directional" position="0 2 2" intensity="1"></a-light>
 
     </a-scene>
