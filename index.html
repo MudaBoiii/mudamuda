@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindAR - Smooth & High Quality</title>
+    <title>MindAR - Bright & Smooth</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
@@ -11,8 +11,7 @@
 
     <a-scene 
       mindar-image="imageTargetSrc: targets.mind;" 
-      color-space="sRGB" 
-      renderer="antialias: true; colorManagement: true; physicallyCorrectLights: true; precision: highp;" 
+      renderer="antialias: true; colorManagement: true; physicallyCorrectLights: false; precision: highp;" 
       vr-mode-ui="enabled: false" 
       device-orientation-permission-ui="enabled: false">
 
@@ -34,8 +33,11 @@
 
       </a-entity>
 
-      <a-light type="ambient" intensity="1.5"></a-light>
-      <a-light type="directional" position="0 2 2" intensity="1"></a-light>
+      <a-light type="ambient" intensity="2.5"></a-light>
+      
+      <a-light type="point" intensity="1.5" position="0 1 2"></a-light>
+      
+      <a-light type="directional" position="-1 2 1" intensity="1"></a-light>
 
     </a-scene>
 
