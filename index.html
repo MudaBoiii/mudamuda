@@ -1,25 +1,19 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindAR - Final Animation & Scale</title>
+    <title>MindAR - Aris 60/40 Stability</title>
     
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
 
     <a-scene 
-      mindar-image="imageTargetSrc: targets.mind;" 
+      mindar-image="imageTargetSrc: targets.mind; filterMinCF: 0.0005; filterBeta: 0.005; warmupTolerance: 7; missTolerance: 7;" 
       color-space="sRGB" 
-      renderer="colorManagement: true, physicallyCorrectLights: true" 
+      renderer="antialias: true; colorManagement: true; physicallyCorrectLights: false; precision: highp;" 
       vr-mode-ui="enabled: false" 
       device-orientation-permission-ui="enabled: false">
 
@@ -33,19 +27,15 @@
         
         <a-gltf-model 
           src="#myModel" 
-          
           position="0 0 0" 
-          
           rotation="90 0 0" 
-          
           scale="1 1 1"
-          
-          animation-mixer="clip: *; loop: repeat">
+          animation-mixer="clip: *; loop: repeat; timeScale: 1">
         </a-gltf-model>
 
       </a-entity>
 
-      <a-light type="ambient" intensity="1.2"></a-light>
+      <a-light type="ambient" intensity="1.5"></a-light>
       <a-light type="directional" position="0 2 2" intensity="1"></a-light>
 
     </a-scene>
