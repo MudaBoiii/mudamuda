@@ -2,46 +2,36 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindAR - Bản Fix Cuối Cùng</title>
-    
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <title>MindAR - Final Debug</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-
     <a-scene 
       mindar-image="imageTargetSrc: targets.mind;" 
       color-space="sRGB" 
       renderer="colorManagement: true, physicallyCorrectLights: true" 
       vr-mode-ui="enabled: false" 
-      device-orientation-permission-ui="enabled: false"
-      gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;">
+      device-orientation-permission-ui="enabled: false">
 
       <a-assets>
         <img id="myPhoto" src="image.jpg">
+        
+        <a-asset-item id="testModel" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/FlightHelmet/glTF/FlightHelmet.gltf"></a-asset-item>
+        
         <a-asset-item id="myModel" src="model.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-        
         <a-image src="#myPhoto" position="0 0 0" width="1" height="1"></a-image>
 
-        <a-gltf-model 
-          src="#myModel" 
-          position="0 -0.4 0.1" 
-          rotation="0 0 0" 
-          scale="0.05 0.05 0.05"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
-        </a-gltf-model>
+        <a-gltf-model src="#testModel" position="0 0 0.2" scale="0.5 0.5 0.5"></a-gltf-model>
+        
+        </a-entity>
 
-      </a-entity>
-
-      <a-light type="ambient" intensity="1.2"></a-light>
-      <a-light type="directional" position="0 5 5" intensity="1.5"></a-light>
-
+      <a-light type="ambient" intensity="1.5"></a-light>
     </a-scene>
-
   </body>
 </html>
